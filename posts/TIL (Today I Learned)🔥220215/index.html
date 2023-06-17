@@ -1,0 +1,23 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta property="og:site_name" content="둥둥떠다니는 유리병"/><link rel="canonical" href="https://kts224.github.io/posts/TIL%20(Today%20I%20Learned)%F0%9F%94%A5220215"/><meta name="twitter:url" content="https://kts224.github.io/posts/TIL%20(Today%20I%20Learned)%F0%9F%94%A5220215"/><meta property="og:url" content="https://kts224.github.io/posts/TIL%20(Today%20I%20Learned)%F0%9F%94%A5220215"/><title>TIL (Today I Learned)🔥 | 둥둥떠다니는 유리병</title><meta name="twitter:title" content="TIL (Today I Learned)🔥 | 둥둥떠다니는 유리병"/><meta property="og:title" content="TIL (Today I Learned)🔥 | 둥둥떠다니는 유리병"/><meta name="description" content="Swift의 컬렉션 타입 Array"/><meta name="twitter:description" content="Swift의 컬렉션 타입 Array"/><meta property="og:description" content="Swift의 컬렉션 타입 Array"/><meta name="twitter:card" content="summary"/><link rel="stylesheet" href="/styles.css" type="text/css"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="shortcut icon" href="/images/favicon.png" type="image/png"/><link rel="alternate" href="/feed.rss" type="application/rss+xml" title="Subscribe to 둥둥떠다니는 유리병"/></head><body class="item-page"><header><div class="wrapper"><a href="/" class="site-name">둥둥떠다니는 유리병</a><nav><ul><li><a href="/posts" class="selected">My posts</a></li><li><a href="/about">About</a></li><li><a href="/etc">Etc</a></li></ul></nav></div></header><div class="wrapper"><article><div class="content"><h1>TIL (Today I Learned)🔥</h1><p>2022-02-15</p><h2>Array</h2><ul><li>순서를 갖고 중복이 가능하다</li><li>빈 배열을 만들때는 반드시 타입을 명시해야한다</li><li>순서를 인덱스라고 하며 0부터 시작한다</li></ul><pre><code><span class="keyword">var</span> animal: <span class="type">Array</span>&lt;<span class="type">String</span>&gt; = <span class="type">Array</span>&lt;<span class="type">String</span>&gt;()
+</code></pre><h3>추가</h3><pre><code>animal.<span class="call">append</span>(<span class="string">"tiger"</span>)
+<span class="comment">//["tiger"]</span>
+animal.<span class="call">append</span>(contentsOf: [<span class="string">"lion, elephant"</span>])
+<span class="comment">//["tiger", "lion", "elephant"]</span>
+animal.<span class="call">insert</span>(<span class="string">"monkey"</span>, at: <span class="number">2</span>)
+<span class="comment">//["tiger", "lion", "monkey", "elephant"]</span>
+animal.<span class="call">insert</span>(contentsOf: [<span class="string">"lion2, elephant2"</span>], at: <span class="number">2</span>)
+<span class="comment">//["tiger", "lion", "lion2", "elephant2", "monkey", "elephant"]</span>
+</code></pre><h3>교체</h3><pre><code>animal[<span class="number">0</span>...<span class="number">3</span>] = [<span class="string">"dog"</span>]
+<span class="comment">//["dog", "monkey", "elephant"]</span>
+animal.<span class="call">replaceSubrange</span>(<span class="number">1</span>...<span class="number">2</span>, with: [<span class="string">"cat"</span>])
+<span class="comment">//["dog", "cat"]</span>
+</code></pre><h3>삭제</h3><pre><code>animal.<span class="call">remove</span>(at: <span class="number">0</span>)
+<span class="comment">//["cat"]</span>
+animal.<span class="call">removeAll</span>()
+<span class="comment">//[]</span>
+</code></pre><pre><code><span class="comment">//개수 판별 가능</span>
+animal.<span class="property">count</span> == <span class="number">0</span> 
+<span class="comment">//true 또는 false 값으로 판별 가능</span> 
+
+animal.<span class="property">isEmpty</span> <span class="comment">// 비어있는지 true false</span>
+</code></pre></div><span>Tagged with: </span><ul class="tag-list"><li><a href="/tags/til">TIL</a></li><li><a href="/tags/swift">Swift</a></li><li><a href="/tags/array">Array</a></li></ul></article></div><footer><p>Generated using <a href="https://github.com/johnsundell/publish">Publish</a></p><p><a href="/feed.rss">RSS feed</a></p></footer></body></html>

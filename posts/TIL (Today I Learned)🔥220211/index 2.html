@@ -1,0 +1,46 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta property="og:site_name" content="KTS224.log"/><link rel="canonical" href="https://kts224.github.io/posts/TIL%20(Today%20I%20Learned)%F0%9F%94%A5220211"/><meta name="twitter:url" content="https://kts224.github.io/posts/TIL%20(Today%20I%20Learned)%F0%9F%94%A5220211"/><meta property="og:url" content="https://kts224.github.io/posts/TIL%20(Today%20I%20Learned)%F0%9F%94%A5220211"/><title>TIL (Today I Learned)🔥 | KTS224.log</title><meta name="twitter:title" content="TIL (Today I Learned)🔥 | KTS224.log"/><meta property="og:title" content="TIL (Today I Learned)🔥 | KTS224.log"/><meta name="description" content="Swift의 데이터 타입"/><meta name="twitter:description" content="Swift의 데이터 타입"/><meta property="og:description" content="Swift의 데이터 타입"/><meta name="twitter:card" content="summary"/><link rel="stylesheet" href="/styles.css" type="text/css"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="shortcut icon" href="/images/favicon.png" type="image/png"/><link rel="alternate" href="/feed.rss" type="application/rss+xml" title="Subscribe to KTS224.log"/></head><body class="item-page"><header><div class="wrapper"><a href="/" class="site-name">KTS224.log</a><nav><ul><li><a href="/posts" class="selected">My posts</a></li><li><a href="/about">About</a></li><li><a href="/etc">Etc</a></li></ul></nav></div></header><div class="wrapper"><article><div class="content"><h1>TIL (Today I Learned)🔥</h1><p>2022-02-11</p><h1>데이터 타입</h1><p>모든 데이터타입 이름은 첫 글자가 대문자로 시작하는 대문자 카멜케이스를 사용한다</p><h2>불리언(Bool)</h2><pre><code><span class="keyword">var</span> someBool: <span class="type">Bool</span> = <span class="keyword">true</span>
+<span class="comment">// true 또는 false 값만 갖을 수 있다.</span>
+</code></pre><h2>정수(Int)</h2><pre><code><span class="keyword">var</span> someInt: <span class="type">Int</span> = <span class="number">1000</span>
+<span class="comment">// 정수값만 가능</span>
+
+<span class="keyword">var</span> someUInt: <span class="type">UInt</span> = <span class="number">100</span>
+<span class="comment">// 0과 양의 정수값만 가능   -&gt; -부호 불가</span>
+
+someInt = someUInt       <span class="comment">// (x) 타입이 달라서 오류 발생</span> 
+someInt = <span class="type">Int</span>(someUInt)  <span class="comment">// (o)</span> 
+</code></pre><h2>실수(Float,Double)</h2><pre><code><span class="keyword">var</span> someFloat: <span class="type">Float</span> = <span class="number">3.123</span>
+<span class="comment">//32비트의 부동소수 표현</span>
+
+<span class="keyword">var</span> someDouble: <span class="type">Double</span> = <span class="number">123133.2123</span>
+<span class="comment">//64비트의 부동소수 표현</span>
+</code></pre><h2>문자(Character)</h2><pre><code><span class="keyword">var</span> someCharacter: <span class="type">Character</span> = <span class="string">"A"</span>
+someCharacter = <span class="string">"♡"</span>
+someCharacter = <span class="string">"ㅁ"</span>
+<span class="comment">// 한글자만 가능</span> 
+</code></pre><h2>문자열(String)</h2><pre><code><span class="keyword">var</span> someString: <span class="type">String</span> = <span class="string">"hello"</span>
+<span class="comment">//문자열</span> 
+someString.<span class="call">append</span>(<span class="string">" world!"</span>)
+someString = someString + <span class="string">" world!!"</span> 
+<span class="comment">//문자열 이어붙이기</span>
+
+<span class="call">print</span>(someString) <span class="comment">//hello world! world!!</span>
+
+<span class="call">print</span>(someString.<span class="property">isEmpty</span>) <span class="comment">//false
+//빈 문자열인지 참 거짓 판별가능</span>
+
+<span class="call">print</span>(someString.<span class="property">count</span>) <span class="comment">//20
+//문자의 수 세기</span>
+
+
+<span class="call">print</span>(someString.<span class="call">hasPrefix</span>(<span class="string">"hell"</span>)) <span class="comment">// true
+// 문자열이 () 로 시작 하는지 Bool 값으로 확인</span>  
+
+<span class="call">print</span>(someString.<span class="call">hasSuffix</span>(<span class="string">"!!"</span>))  <span class="comment">//true
+// 문자열이 () 로 끝나는지 Bool 값으로 확인</span>
+
+<span class="call">print</span>(someString.<span class="call">uppercased</span>())  
+<span class="comment">// 대문자 변환. HELLO WORLD! WORLD!!</span>
+
+<span class="call">print</span>(someString.<span class="call">lowercased</span>()) 
+<span class="comment">// 소문자 변환. hello world! worl</span>
+</code></pre></div><span>Tagged with: </span><ul class="tag-list"><li><a href="/tags/til">TIL</a></li><li><a href="/tags/swift">Swift</a></li></ul></article></div><footer><p>Generated using <a href="https://github.com/johnsundell/publish">Publish</a></p><p><a href="/feed.rss">RSS feed</a></p></footer></body></html>

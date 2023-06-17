@@ -1,0 +1,37 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta property="og:site_name" content="KTS224.log"/><link rel="canonical" href="https://kts224.github.io/posts/TIL%20(Today%20I%20Learned)%F0%9F%94%A5readLine"/><meta name="twitter:url" content="https://kts224.github.io/posts/TIL%20(Today%20I%20Learned)%F0%9F%94%A5readLine"/><meta property="og:url" content="https://kts224.github.io/posts/TIL%20(Today%20I%20Learned)%F0%9F%94%A5readLine"/><title>TIL (Today I Learned)🔥readLine | KTS224.log</title><meta name="twitter:title" content="TIL (Today I Learned)🔥readLine | KTS224.log"/><meta property="og:title" content="TIL (Today I Learned)🔥readLine | KTS224.log"/><meta name="description" content="Swift의 입력"/><meta name="twitter:description" content="Swift의 입력"/><meta property="og:description" content="Swift의 입력"/><meta name="twitter:card" content="summary"/><link rel="stylesheet" href="/styles.css" type="text/css"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="shortcut icon" href="/images/favicon.png" type="image/png"/><link rel="alternate" href="/feed.rss" type="application/rss+xml" title="Subscribe to KTS224.log"/></head><body class="item-page"><header><div class="wrapper"><a href="/" class="site-name">KTS224.log</a><nav><ul><li><a href="/posts" class="selected">My posts</a></li><li><a href="/about">About</a></li><li><a href="/etc">Etc</a></li></ul></nav></div></header><div class="wrapper"><article><div class="content"><h3>TIL (Today I Learned)🔥</h3><p>2022-03-07</p><br>
+
+값을 입력 받고싶을때 
+readLine() 함수를 이용하면 가능하다
+
+```swift
+print("입력해주세요 : ")
+let input: String? = readLine()
+```
+
+- 값은 항상 옵셔널로 나온다.
+- 항상 문자열로 인식한다.
+
+<br><br>
+
+```swift
+print("숫자를 입력해주세요 : ")
+let inputValues = Int(readLine()!)!
+```
+
+이렇게 하면 인티저형으로 값이 나온다.
+하지만 만약 공백이나 문자열을 입력할경우 런타임오류가 발생한다
+강제언레핑은 위험하니까 다른방법을 생각해보자.
+
+<br><br>
+
+```swift
+let numbers = readLine()!
+let numbersArray = numbers.components(separatedBy: " ").map{ Int($0)! }
+print(numbersArray.reduce(0, +))
+```
+
+`고차함수`
+`map` `reduce` 를 활용하여 1 2 3 4를 입력받으면
+1+2+3+4 = 10 이 나온다..
+아직은 너무어렵다 클로저.
+</div><span>Tagged with: </span><ul class="tag-list"><li><a href="/tags/til">TIL</a></li><li><a href="/tags/swift">Swift</a></li><li><a href="/tags/readline">readLine</a></li></ul></article></div><footer><p>Generated using <a href="https://github.com/johnsundell/publish">Publish</a></p><p><a href="/feed.rss">RSS feed</a></p></footer></body></html>
